@@ -161,8 +161,15 @@ img { max-width: 100%; height: auto; display: block; }
 .sticky-cta { display: none; }
 
 /* ===== الشاشات المتوسطة ===== */
+/* القائمة تنطوي إلى زر من 1180 بعد إضافة «من نحن» (سبعة عناصر لا تتسع في سطر واحد تحت ذلك) */
+@media (max-width: 1180px) {
+  .menu-btn { display: inline-flex; align-items: center; justify-content: center; }
+  .nav { display: none; position: absolute; inset-inline: 0; top: 100%; flex-direction: column; align-items: stretch; gap: 0; padding: 8px var(--pad) 20px; background: var(--navy); border-bottom: 1px solid rgba(246,242,233,.10); font-size: 16px; }
+  .nav.open { display: flex; }
+  .nav a { padding: 14px 0; border-top: 1px solid rgba(246,242,233,.08); }
+}
+
 @media (max-width: 1080px) {
-  .nav { gap: 22px; font-size: 14px; }
   .arch { width: 300px; }
   .arch-frame { width: 260px; height: 360px; border-radius: 130px 130px 0 0; }
   .arch-frame img { height: 290px; }
@@ -310,3 +317,10 @@ a.area:hover h3 { color: var(--gold-ink); }
   .faq summary { font-size: 17px; padding: 16px 0; }
   .related-wrap { margin-top: 36px; }
 }
+
+/* صفحة من نحن */
+.aud.principles { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.aud.principles h3 { font-size: 20px; }
+.team-intro { max-width: 800px; display: flex; flex-direction: column; gap: 14px; font-size: 17px; line-height: 1.9; color: var(--ink); }
+@media (max-width: 1080px) { .aud.principles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 820px) { .aud.principles { grid-template-columns: 1fr; } .team-intro { font-size: 16px; } }
