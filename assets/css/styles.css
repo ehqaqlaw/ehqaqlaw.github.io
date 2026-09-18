@@ -135,6 +135,8 @@ img { max-width: 100%; height: auto; display: block; }
 .area { display: flex; justify-content: space-between; gap: 24px; padding: 22px 0; border-top: 1px solid var(--line-2); }
 .area h3 { font-size: 22px; line-height: 1.4; }
 .area p { font-size: 15px; line-height: 1.7; color: var(--muted); margin-top: 6px; max-width: 360px; }
+.area.wide { grid-column: 1 / -1; }
+.area.wide p { max-width: 640px; }
 .area .how { flex-shrink: 0; width: 170px; font-size: 13px; line-height: 1.7; color: var(--gold-ink); text-align: end; padding-top: 6px; }
 
 /* حلول العملاء */
@@ -291,6 +293,11 @@ img { max-width: 100%; height: auto; display: block; }
 .aud h3 { font-size: 22px; line-height: 1.4; }
 .aud p { margin-top: 10px; font-size: 15px; line-height: 1.75; color: var(--muted); }
 .packs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.packs.single { grid-template-columns: minmax(0, 760px); }
+.keyfacts.five { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.band .cta-row { flex-shrink: 0; }
+.btn-ghost-dark { border: 1px solid var(--navy); color: var(--navy); background: transparent; }
+.btn-ghost-dark:hover { background: var(--navy); color: var(--ivory); }
 .pack { display: flex; flex-direction: column; padding: 32px; background: var(--paper); border: 1px solid var(--line); }
 .pack h3 { font-size: 24px; line-height: 1.4; }
 .pack > p { margin-top: 10px; font-size: 15px; line-height: 1.75; color: var(--muted); }
@@ -328,6 +335,7 @@ a.area h3::after { content: " ←"; font-size: .72em; color: var(--gold-ink); op
 a.area:hover h3 { color: var(--gold-ink); }
 @media (max-width: 1080px) {
   .keyfacts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .keyfacts.five { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .aud, .packs { grid-template-columns: 1fr; }
   .types { grid-template-columns: 1fr; column-gap: 0; }
 }
